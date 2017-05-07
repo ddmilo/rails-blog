@@ -1,15 +1,51 @@
 <h1>Leave A Message....</h1>
 
-
 <% if user_signed_in? %>
 <h2>Hello,
   <%= current_user.username %></h2>
-<%= link_to "New Entry", posts_new_path %>
+<a class="btn" href ="/posts/new">NEW ENTRY </a>
 <% end %>
 
-<div class="">
+
+<div class="row section">
+<div class="col">
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+  <p>You have to include jQuery and Materialize JS + CSS for the modal to work. You can include it from <a href="http://materializecss.com/getting-started.html">CDN (getting started)</a>.
+</div>
+</div>
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+<div class="modal-content">
+  <%= form_for :post do |f| %>
+  <div>
+    <div class="input-field">
+      <%= f.label :title %>
+      <br>
+      <%= f.text_field :title %>
+      <br>
+    </div>
+    <div class="input-field">
+      <%= f.label :content %>
+      <br>
+      <%= f.text_field :content %>
+      <br>
+    </div>
+
+    <%= f.submit  %>
+    <% end %>
+  </div>
+
+</div>
+<div class="modal-footer">
+  <a href="/posts/new" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+</div>
+</div>
+
+
 
   <% @posts.each do |post| %>
+
   <h3>To Whom It May Concern...</h3>
 
   <h4><%= post.content %></h4>
