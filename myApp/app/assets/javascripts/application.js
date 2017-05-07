@@ -16,3 +16,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+var options = [
+  {selector: '#posts', offset: 400, callback: function(el) {
+     Materialize.showStaggeredList($(el));
+   } },
+];
+
+Materialize.scrollFire(options);
