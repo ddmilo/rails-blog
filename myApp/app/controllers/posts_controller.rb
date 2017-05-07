@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find_by(params[:id])
   end
 
   def new
@@ -27,6 +28,7 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post)
       .permit(:title, :content)
+       .merge(user_id: current_user.id)
 
   end
 end
