@@ -1,0 +1,11 @@
+$text_color: white;
+$main_color: black;
+
+.nav-wrapper {
+  background-color: $main_color;
+}
+
+body {
+  text-align: center;
+  text-color: $text_color;
+}
