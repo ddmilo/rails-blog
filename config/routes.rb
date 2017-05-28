@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'user_controller/index'
+
+  get 'user_controller/edit'
+
+  get 'user_controller/show'
+
   get 'home_page/index'
 
   get 'posts/index'

@@ -1,26 +1,36 @@
 $text_color: white;
 $main_color: black;
+$text_shadow: 1px 1px 3px grey;
+
+nav{
+  margin-bottom: -1em;
+}
 
 .nav-wrapper {
   background-color: $main_color;
+
 }
 
 body {
   text-color: $text_color;
+  background-color: $main_color;
+
 }
 
 .jumbotron {
+
   background-image: url("pexels-photo.jpg");
   background-size: cover;
   color: black;
   // background-color: black;
-  height: 60vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   flex-direction: column;
+
 
 }
 
