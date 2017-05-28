@@ -6,6 +6,24 @@ $main_color: black;
 }
 
 body {
-  text-align: center;
   text-color: $text_color;
+}
+
+.jumbotron {
+  background-image: url("pexels-photo.jpg");
+  background-size: cover;
+  color: black;
+  // background-color: black;
+  height: 60vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+
+}
+
+.posts_index {
+  text-align: center;
 }

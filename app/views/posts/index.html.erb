@@ -1,20 +1,26 @@
-<h1>Leave A Message....</h1>
+<div class="posts_index">
 
-<% if user_signed_in? %>
-<h2>Hello,
-  <%= current_user.username %></h2>
-<a class="btn" href="/posts/new">NEW ENTRY
-</a>
-<% end %>
+  <% if user_signed_in? %>
+  <h2>Hello,
+    <%= current_user.username %></h2>
+    <%= link_to "New Entry", posts_new_path, class: 'btn right' %>
+  <% end %>
+  <br>
+  <br>
+  <hr>
 
-<% @posts.each do |post| %>
 
-<h3>To Whom It May Concern...</h3>
+</div>
+<div class="post-section">
 
-<h4><%= post.content %></h4>
-<h5>Posted
-  <%= time_ago_in_words (post.created_at) %></h5>
+  <% @posts.each do |post| %>
 
-<hr>
+  <h3><%= post.title %></h3>
+
+  <h4><%= post.content %></h4>
+  <h5>Posted
+    <%= time_ago_in_words (post.created_at) %></h5>
+
+  <hr>
 </div>
 <%end%>

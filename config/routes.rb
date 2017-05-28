@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home_page/index'
+
   get 'posts/index'
 
   get 'posts/show'
@@ -9,6 +11,6 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root 'posts#index'
+  root 'home_page#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
