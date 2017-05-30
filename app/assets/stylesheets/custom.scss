@@ -1,9 +1,10 @@
 $text_color: white;
-$main_color: black;
+$main_color: #52AA8A;
+$secondary: #2BD9FE;
 $text_shadow: 1px 1px 3px grey;
 
 nav{
-  margin-bottom: -1em;
+  // margin-bottom: -5em;
 }
 
 .nav-wrapper {
@@ -13,13 +14,18 @@ nav{
 
 body {
   text-color: $text_color;
+  display: flex;
+  background-color: $main_color;
+  flex-direction: column;
+  min-height: 100vh;
+  // background-color: gray;
   // background-color: $main_color;
 
 }
 
 .jumbotron {
 
-  background-image: url("pexels-photo.jpg");
+  background-image: url("blurb.jpg");
   background-size: cover;
   color: black;
   // background-color: black;
@@ -51,7 +57,36 @@ hr {
 }
 
 .posts_index {
-  text-align: center;
+  background-color: $secondary;
+  // text-align: center;
+
+  padding: 1em;
+}
+
+.container {
+
+// margin: 0;
+// background-color: white;
+}
+
+.post_show {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  // align-content: center;
+  // width: 50vw;
+
+  background-color: white;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.post_content{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .user-show-posts{
@@ -60,4 +95,51 @@ align-items: center;
 justify-content: center;
 align-content: center;
 flex-direction: column;
+}
+
+
+.blah{
+}
+.box {
+
+
+   padding: 2em;
+   border: 1px solid #ccc;
+   display: block;
+   width: 50%;
+   height: 300px;
+   float: left;
+   margin: -1px 0 0 -1px;
+   color: black;
+   background: linear-gradient(
+      white, white 50%, #2BD9FE 50%, #2BD9FE
+   );
+   background-size: 100% 202%;
+   transition: all 0.2s ease;
+   animation: down-bump 0.4s ease;
+}
+
+.box:hover {
+  background-position: 100% 100%;
+  animation: up-bump 0.4s ease;
+
+}
+
+@keyframes up-bump {
+  0% { padding-top: 2em; }
+  50% { padding-top: 1.5em; }
+  100% { padding-top: 2em; }
+}
+@keyframes down-bump {
+  0% { padding-top: 2em; }
+  50% { padding-top: 2.5em; }
+  100% { padding-top: 2em; }
+}
+
+.box:hover p{
+  color: white;
+}
+
+.box:hover a{
+  color: black;
 }
