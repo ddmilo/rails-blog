@@ -1,0 +1,24 @@
+
+
+<h3><%= @user.username %></h3>
+<% if correct_user?(@user) %>
+<%= link_to "Edit Account",edit_user_controller_path %>
+<% end %>
+  <hr>
+<h4>Entries</h4>
+
+
+<div class="user-show-posts">
+  <h4>Most Recent</h4>
+  <hr>
+  <% @posts.each do |post| %>
+  <%= will_paginate @posts %>
+    <p><%= link_to post.title, post_path(post) %></p>
+    <p><%= truncate(post.content, length: 100) %></p>
+
+    <p>Created: <%= time_ago_in_words (post.created_at) %></p>
+
+    <hr>
+
+</div>
+<% end %>

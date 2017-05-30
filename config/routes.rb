@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
+
+
+  resources :posts
+
+  resources :user_controller
+
+
+
   get 'home_page/index'
 
-  get 'posts/index'
 
-  get 'posts/show'
-
-  get 'posts/new'
-
-  post '/posts/new' => "posts#create", :as => :post
 
   devise_for :users
 

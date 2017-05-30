@@ -1,4 +1,7 @@
-<%= form_for :post do |f| %>
+<div class="new-post">
+
+
+<%= form_for @post, url: posts_path do |f| %>
 <div>
   <div class="input-field">
     <%= f.label :title %>
@@ -8,12 +11,13 @@
   </div>
   <div class="input-field">
     <%= f.label :content %>
-    <br>
-    <%= f.text_field :content %>
+    <br><br>
+    <%= f.text_area :content, class: 'text-area'%>
     <br>
   </div>
 
   <button class='btn' action='<%= f.submit  %>'>Create Entry
   </button>
   <% end %>
+</div>
 </div>

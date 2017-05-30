@@ -1,11 +1,14 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    @posts = @posts.reorder("updated_at DESC").paginate(:page => params[:page], :per_page => 5)
+
 
   end
 
   def show
-    @post = Post.find_by(params[:id])
+
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -20,7 +23,7 @@ class PostsController < ApplicationController
     post = Post.create(post_params)
     post.save
 
-    redirect_to posts_index_path
+    redirect_to posts_path
   end
 
   private
