@@ -3,7 +3,7 @@
   <% if user_signed_in? %>
   <h2>Hello,
     <%= current_user.username %></h2>
-    <%= link_to "New Entry", posts_new_path, class: 'btn right' %>
+    <%= link_to "New Entry", new_post_path, class: 'btn right' %>
   <% end %>
   <br>
   <br>
@@ -15,9 +15,10 @@
 
   <% @posts.each do |post| %>
 
-  <h3><%= post.title %></h3>
+  <h3><%= link_to post.title, post_path(post) %></h3>
 
-  <h4><%= post.content %></h4>
+  <h4><%= truncate(post.content, length: 50) %></h4>
+  <h4>Created by: <%= link_to post.user.username, user_controller_show_path(post.user) %></h4>
   <h5>Posted
     <%= time_ago_in_words (post.created_at) %></h5>
 

@@ -13,7 +13,7 @@ nav{
 
 body {
   text-color: $text_color;
-  background-color: $main_color;
+  // background-color: $main_color;
 
 }
 
@@ -34,6 +34,30 @@ body {
 
 }
 
+hr {
+  color: black;
+}
+
+.text-area{
+  height: 250px;
+  width: 520px;
+  overflow: auto;
+}
+
+.new-post {
+  display: flex;
+  justify-content: center;
+
+}
+
 .posts_index {
   text-align: center;
+}
+
+.user-show-posts{
+display: flex;
+align-items: center;
+justify-content: center;
+align-content: center;
+flex-direction: column;
 }
