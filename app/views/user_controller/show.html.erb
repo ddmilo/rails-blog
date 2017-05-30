@@ -13,10 +13,10 @@
   <hr>
   <% @posts.each do |post| %>
   <%= will_paginate @posts %>
-    <p><%= post.title %></p>
+    <p><%= link_to post.title, post_path(post) %></p>
     <p><%= truncate(post.content, length: 100) %></p>
 
-    <p>Created <%= time_ago_in_words (post.created_at) %></p>
+    <p>Created: <%= time_ago_in_words (post.created_at) %></p>
 
     <hr>
 

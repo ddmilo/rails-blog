@@ -15,6 +15,7 @@
 
   <% @posts.each do |post| %>
 
+
   <h3><%= link_to post.title, post_path(post) %></h3>
 
   <h4><%= truncate(post.content, length: 50) %></h4>
@@ -25,3 +26,5 @@
   <hr>
 </div>
 <%end%>
+
+<%= will_paginate @posts %>
