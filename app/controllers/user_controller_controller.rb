@@ -12,4 +12,8 @@ class UserControllerController < ApplicationController
     @posts = @posts.reorder("updated_at DESC").paginate(:page => params[:page], :per_page => 5)
 
   end
+
+  
+
+
 end

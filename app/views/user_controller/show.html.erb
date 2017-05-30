@@ -1,7 +1,9 @@
 
 
 <h3><%= @user.username %></h3>
+<% if correct_user?(@user) %>
 <%= link_to "Edit Account",edit_user_controller_path %>
+<% end %>
   <hr>
 <h4>Entries</h4>
 
