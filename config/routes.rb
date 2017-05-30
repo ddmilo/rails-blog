@@ -3,11 +3,9 @@ Rails.application.routes.draw do
 
   resources :posts
 
-  get 'user_controller/index'
+  resources :user_controller
 
-  get 'user_controller/edit'
 
-  get 'user_controller/show'
 
   get 'home_page/index'
 

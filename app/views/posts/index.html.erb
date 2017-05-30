@@ -18,7 +18,7 @@
   <h3><%= link_to post.title, post_path(post) %></h3>
 
   <h4><%= truncate(post.content, length: 50) %></h4>
-  <h4>Created by: <%= link_to post.user.username, user_controller_show_path(post.user) %></h4>
+  <h4>Created by: <%= link_to post.user.username, user_controller_path(post.user) %></h4>
   <h5>Posted
     <%= time_ago_in_words (post.created_at) %></h5>
 
