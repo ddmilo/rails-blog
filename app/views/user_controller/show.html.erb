@@ -1,24 +1,31 @@
+<div>
+  <h3><%= @user.username %></h3>
+  <% if correct_user?(@user) %>
+  <%= link_to "Edit Account",edit_user_controller_path, class: 'btn left' %>
+  <% end %>
+</div>
+<!-- <hr> -->
 
+<div class="container">
+  <h3>Entries
+  </h3>
+  <div class="blah">
 
-<h3><%= @user.username %></h3>
-<% if correct_user?(@user) %>
-<%= link_to "Edit Account",edit_user_controller_path %>
-<% end %>
-  <hr>
-<h4>Entries</h4>
+    <% @posts.each do |post| %>
 
+    <div class="col-md-9 col-sm-9 col-xs-9  box">
 
-<div class="user-show-posts">
-  <h4>Most Recent</h4>
-  <hr>
-  <% @posts.each do |post| %>
-  <%= will_paginate @posts %>
-    <p><%= link_to post.title, post_path(post) %></p>
-    <p><%= truncate(post.content, length: 100) %></p>
+      <p><%= link_to post.title, post_path(post) %></p>
 
-    <p>Created: <%= time_ago_in_words (post.created_at) %></p>
+      <p class="post_content center"><%= truncate(post.content, length: 50) %></p>
 
-    <hr>
+      <p>Created
+        <%= time_ago_in_words(post.created_at) %>
+        ago
+      </p>
+
+    </div>
+    <% end%>
+  </div>
 
 </div>
-<% end %>

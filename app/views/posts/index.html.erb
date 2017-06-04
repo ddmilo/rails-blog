@@ -1,10 +1,9 @@
 <% if user_signed_in? %>
 <div class="posts_index z-depth-5">
 
-
   <h2 class="center">Hello,
     <%= current_user.username %></h2>
-    <%= link_to "New Entry", new_post_path, class: 'btn left' %>
+  <%= link_to "New Entry", new_post_path, class: 'btn left' %>
 
   <br>
   <br>
@@ -16,29 +15,25 @@
 <div class="container post_container ">
   <h3>Blurbs</h3>
 
-
   <div class="blah  ">
 
     <% @posts.each do |post|  %>
 
+    <div class="col-md-9 col-sm-9 col-xs-9  box">
+      <h5 class="center"><%= link_to post.title, post_path(post) %></h5>
 
-      <div class="col-md-9 col-sm-9 col-xs-9  box">
-        <h5 class="center"><%= link_to post.title, post_path(post) %></h5>
+      <p class="post_content center"><%= truncate(post.content, length: 50) %></p>
 
-        <p class="post_content center"><%= truncate(post.content, length: 50) %></p>
+      <p class="right-align">Created by:
+        <%= link_to post.user.username, user_controller_path(post.user) %></p>
 
-        <p class="right-align">Created by: <%= link_to post.user.username, user_controller_path(post.user) %></p>
+      <p class="right-align">Posted
+        <%= time_ago_in_words (post.created_at) %></p>
 
-        <p class="right-align">Posted
-          <%= time_ago_in_words (post.created_at) %></p>
+    </div>
 
-      </div>
-
-
-  <%end%>
+    <%end%>
   </div>
 </div>
-
-
 
 <%= will_paginate @posts, class: 'center' %>
