@@ -1,7 +1,7 @@
 <div>
   <h3><%= @user.username %></h3>
   <% if correct_user?(@user) %>
-  <%= link_to "Edit Account",edit_user_controller_path, class: 'btn left' %>
+  <%= link_to "Edit Account",  edit_user_registration_path, class: 'btn left' %>
   <% end %>
 </div>
 <!-- <hr> -->

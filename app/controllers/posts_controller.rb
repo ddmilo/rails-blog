@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @post = Post.find_by(params[:user_id])
     @posts = Post.all
     @posts = @posts.reorder("updated_at DESC").paginate(:page => params[:page], :per_page => 5)
 
@@ -27,6 +28,8 @@ class PostsController < ApplicationController
   end
 
   private
+
+
 
   def post_params
     params.require(:post)
