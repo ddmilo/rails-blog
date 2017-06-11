@@ -23,11 +23,10 @@
     <div class="col-md-9 col-sm-9 col-xs-9  box">
       <h5 class="center"><%= link_to post.title, post_path(post) %></h5>
 
-      <p class="post_content center"><%= truncate(post.content, length: 50) %></p>
-      <% if has_user?(@post)%>
+      <p class="post_content center"><%= linkify_hashtags(post.content) %></p>
       <p class="right-align">Created by:
         <%= link_to post.user.username, user_controller_path(post.user) %></p>
-        <% end %>
+
 
       <p class="right-align">Posted
         <%= time_ago_in_words (post.created_at) %></p>

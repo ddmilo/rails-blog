@@ -5,11 +5,14 @@ class PostsController < ApplicationController
     @posts = @posts.reorder("updated_at DESC").paginate(:page => params[:page], :per_page => 5)
 
 
+
+
   end
 
   def show
 
     @post = Post.find(params[:id])
+
   end
 
   def new

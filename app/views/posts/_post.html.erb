@@ -1,0 +1,10 @@
+
+<h5 class="center"><%= link_to post.title, post_path(post) %></h5>
+
+<p class="post_content center"><%= linkify_hashtags(post.content) %></p>
+<p class="right-align">Created by:
+  <%= link_to post.user.username, user_controller_path(post.user) %></p>
+
+
+<p class="right-align">Posted
+  <%= time_ago_in_words (post.created_at) %></p>
