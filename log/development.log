@@ -23231,3 +23231,29 @@ app/views/posts/index.html.erb:21:in `_app_views_posts_index_html_erb___44071871
   Rendering /Users/danmilo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /Users/danmilo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
   Rendered /Users/danmilo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (75.5ms)
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3739659311751548325);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (5.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSimpleHashtagHashtags (20170611110316)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class CreateSimpleHashtagHashtags < ActiveRecord::Migration[4.2] (called from require at /Users/danmilo/rails-blog/bin/rails:9)
+  [1m[35m (26.2ms)[0m  [1m[35mCREATE TABLE "simple_hashtag_hashtags" ("id" serial primary key, "name" character varying, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_simple_hashtag_hashtags_on_name" ON "simple_hashtag_hashtags"  ("name")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170611110316"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSimpleHashtagHashtaggings (20170611110317)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class CreateSimpleHashtagHashtaggings < ActiveRecord::Migration[4.2] (called from require at /Users/danmilo/rails-blog/bin/rails:9)
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "simple_hashtag_hashtaggings" ("id" serial primary key, "hashtag_id" integer, "hashtaggable_type" character varying, "hashtaggable_id" integer)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_simple_hashtag_hashtaggings_on_hashtag_id" ON "simple_hashtag_hashtaggings"  ("hashtag_id")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_hashtaggings_hashtaggable_id_hashtaggable_type" ON "simple_hashtag_hashtaggings"  ("hashtaggable_id", "hashtaggable_type")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170611110317"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3739659311751548325)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
