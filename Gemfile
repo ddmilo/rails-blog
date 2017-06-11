@@ -26,6 +26,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'materialize-sass'
 gem 'will_paginate'
+gem 'simple_hashtag'
 
 
 # Use jquery as the JavaScript library
